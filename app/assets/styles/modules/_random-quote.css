@@ -1,0 +1,51 @@
+.random-quote {
+
+  &__box {
+    display: grid;
+    grid-template-columns: [box-col--start] 5% [box-col__content--start] 90% [box-col__content--end] 5% [box-col--end];
+    grid-template-rows: [box-row--start] 5% [box-row__title--start] 12.5% [box-row__title--end] 2.5% [box-row__quote--start] 60% [box-row__quote--end] 2.5% [box-row__button--start] 12.5% [box-row__button--end] 5% [box-row--end];
+    grid-column: col-content--start / col-content--end;
+    grid-row: row-content--start / row-content--end;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #d7e5d7;
+    border-style: solid;
+    border-color: #2e1866;
+    border-width: 2px;
+    border-radius: 50px;
+    /*margin-right: 25%;
+    margin-left: 25%;
+    padding: 10%;*/
+  }
+
+  &__box-title {
+    grid-column: box-col__content--start / box-col__content--end;
+    grid-row: box-row__title--start / box-row__title--end;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: Trebuchet;
+    font-size: 3em;
+    font-style: italic;
+    font-variant: small-caps;
+  }
+
+  &__box-quote {
+    grid-column: box-col__content--start / box-col__content--end;
+    grid-row: box-row__quote--start / box-row__quote--end;
+
+    &--text {
+      text-align: left;
+      font-family: Garamond;
+      font-size: 1.75em;
+    }
+
+    &--author {
+      text-align: right;
+      font-family: Bookman;
+      font-size: 1.25em;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.button-box {
+  display: flex;
+  grid-column: box-col__content--start / box-col__content--end;
+  grid-row: box-row__button--start / box-row__button--end;
+  width: 100%;
+  height: 100%;
+  align-items: flex-end;
+  justify-content: space-around;
+
+  &__tweet-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__new-quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

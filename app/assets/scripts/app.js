@@ -67,13 +67,13 @@ var quotes = [
 // This function selects a random quote from the array
 function newQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
-  document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+  document.getElementById('random-quote--text').innerHTML = quotes[randomNumber];
 }
 
 // This section enables a viewer to tweet the displayed quote
 $("#twitterButton").click(function() {
-  var tweetQuote = $('#quoteDisplay').text();
-  var tweetAuthor = $('#quoteAuthor').text();
+  var tweetQuote = $('#random-quote--text').text();
+  var tweetAuthor = $('#random-quote--author').text();
   var tweetContent = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(tweetQuote + " " + tweetAuthor);
-  $('.tweet-this--content').attr('href', tweetContent);
+  $('.tweet-content').attr('href', tweetContent);
 });

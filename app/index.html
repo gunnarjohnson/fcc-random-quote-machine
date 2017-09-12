@@ -1,47 +1,34 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Deep Thoughts</title>
-  
-  
-  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 
-      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./temp/styles/styles.css">
 
-  
+
 </head>
 
 <body>
-  <head>
-  <title>Deep Thoughts</title>
-</head>
-<body>
-  <div class = "container">
-    <div class = "random-quote--box">
-      <div class = "row">
-        <div class = "col-md-12 text-title">
-          <h1><strong><em>Deep Thoughts</em></strong></h1>
-        </div>
-        <div class = "col-md-12 text-quote--box">
-          <div id = "quoteDisplay" class = "col-md-12 text-quote--text">I'd rather be rich than stupid.</div>
-          <div id = "quoteAuthor" class = "col-md-12 text-quote--author">- Jack Handey</div>
-        </div>
-        <div class = "button-box">
-          <div class = "tweet-quote--button">
-            <a id="twitterButton" href="" class="btn btn-basic tweet-this--content" target="_blank">Tweet Quote</a>
-          </div>
-          <div class = "new-quote--button">
-            <button class="btn btn-basic" onclick="newQuote()">New Quote</button>
-          </div>
-        </div>
+  <div class="random-quote__box">
+    <h1 class="random-quote__box-title">Deep Thoughts</h1>
+    <div class="random-quote__box-quote">
+      <div id="random-quote--text" class="random-quote__box-quote--text">I'd rather be rich than stupid.</div>
+      <div id="random-quote--author" class="random-quote__box-quote--author">- Jack Handey</div>
+    </div>
+    <div class="button-box">
+      <div class="button-box__tweet-quote">
+        <a id="twitterButton" href="" class= "btn tweet-content" target="_blank">Tweet Quote</a>
+      </div>
+      <div class="button-box__new-quote">
+        <p class="btn" onclick="newQuote()">New Quote</p>
       </div>
     </div>
   </div>
 </body>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="./assets/scripts/app.js"></script>
 
-</body>
 </html>

@@ -1,0 +1,22 @@
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 5em;
+  height: 2.5em;
+  margin: 0;
+  padding: 0;
+  background-color: #aacbff;
+  color: #000533;
+  border-style: solid;
+  border-color: #000000;
+  font-family: "Lucida Console";
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.btn:hover {
+  color: #3e005e;
+  background-color: #ff6bea;
+}
