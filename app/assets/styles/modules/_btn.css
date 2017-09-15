@@ -2,21 +2,37 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  width: 5em;
-  height: 2.5em;
+  width: 3em;
+  height: 1.5em;
   margin: 0;
-  padding: 0;
-  background-color: #aacbff;
-  color: #000533;
+  padding: 0.5em;
+  background: linear-gradient($mainLightBlue 5%, rgb(106, 128, 189) 100%) $mainLightBlue;
+  background-color: $mainLightBlue;
+  color: $mainDarkBlue;
+  border: 1px solid rgb(0, 0, 0);
   border-style: solid;
   border-color: #000000;
+  border-radius: 1em;
+  box-shadow: $mainBlue 1px 0px 10px -1px;
   font-family: "Lucida Console";
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
-}
+  text-decoration: none;
+  text-shadow: $altGray 0px 0px 7px;
+  cursor: pointer;
 
-.btn:hover {
-  color: #3e005e;
-  background-color: #ff6bea;
+  @mixin atSmall {
+    width: 5em;
+    height: 2.5em;
+    padding: 0;
+    font-size: 1.5em;
+  }
+
+  &:hover {
+    background: linear-gradient($mainOrange 5%, rgb(235, 227, 85) 100%) $mainOrange;
+    background-color: #ff6bea;
+    color: $mainMaroon;
+    box-shadow: $mainMaroon 1px 0px 10px -1px;
+    text-shadow: $altGray 0px 0px 7px;
+  }
 }

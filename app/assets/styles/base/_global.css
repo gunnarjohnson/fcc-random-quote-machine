@@ -5,10 +5,9 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: [col--start] 25% [col-content--start] 50% [col-content--end] 25% [col--end];
-  grid-template-rows: [row--start] 25% [row-content--start] 50% [row-content--end] 25% [row--end];
+  grid-template-columns: [col--start] 10% [col-content__small--start] 15% [col-content__large--start] 50% [col-content__large--end] 15% [col-content__small--end] 10% [col--end];
+  grid-template-rows: [row--start] 10% [row-content__small--start] 10% [row-content__large--start] 60% [row-content__large--end] 10% [row-content__small--end] 10% [row--end];
   width: 100%;
   height: 100%;
   background-color: #aacbff;
-  background-image: url("http://wallpapercave.com/wp/mU3EKHK.jpg");
 }

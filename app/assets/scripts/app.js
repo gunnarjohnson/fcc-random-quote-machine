@@ -67,7 +67,31 @@ var quotes = [
 // This function selects a random quote from the array
 function newQuote() {
   var randomNumber = Math.floor(Math.random() * (quotes.length));
-  document.getElementById('random-quote--text').innerHTML = quotes[randomNumber];
+  if (document.getElementById('random-quote--text').innerHTML == quotes[randomNumber]) {
+    if (randomNumber == (quotes.length - 1)) {
+      randomNumber -= 1;
+    }
+    else {
+      randomNumber += 1;
+    }
+  }
+  var boxQuote = document.querySelector('.random-quote__box-quote');
+  boxQuote.style.opacity = 0;
+  setTimeout(function () {
+    document.getElementById('random-quote--text').innerHTML = quotes[randomNumber];
+    boxQuote.style.opacity = 1 }, 500);
+  for (i = 1; i < 5; i++) {
+    if (document.getElementById("deep-thoughts__page").classList.contains('background-image--' + i)) {
+      if (i == 4) {
+        document.getElementById("deep-thoughts__page").classList.remove("background-image--4");
+        document.getElementById("deep-thoughts__page").classList.add("background-image--1");
+      }
+      else {
+        document.getElementById("deep-thoughts__page").classList.remove("background-image--" + i);
+        document.getElementById("deep-thoughts__page").classList.add("background-image--" + (i + 1));
+      }
+    }
+  }
 }
 
 // This section enables a viewer to tweet the displayed quote

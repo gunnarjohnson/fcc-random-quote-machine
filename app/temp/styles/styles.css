@@ -457,13 +457,35 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: [col--start] 25% [col-content--start] 50% [col-content--end] 25% [col--end];
-  grid-template-rows: [row--start] 25% [row-content--start] 50% [row-content--end] 25% [row--end];
+  grid-template-columns: [col--start] 10% [col-content__small--start] 15% [col-content__large--start] 50% [col-content__large--end] 15% [col-content__small--end] 10% [col--end];
+  grid-template-rows: [row--start] 10% [row-content__small--start] 10% [row-content__large--start] 60% [row-content__large--end] 10% [row-content__small--end] 10% [row--end];
   width: 100%;
   height: 100%;
   background-color: #aacbff;
-  background-image: url("http://wallpapercave.com/wp/mU3EKHK.jpg");
 }
+
+.background-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: background-image 0.75s linear;
+  transition: background-image 0.75s linear;
+}
+
+.background-image--1 {
+    background-image: url('../images/deep_thoughts-image_1.jpg');
+  }
+
+.background-image--2 {
+    background-image: url('../images/deep_thoughts-image_2.jpg');
+  }
+
+.background-image--3 {
+    background-image: url('../images/deep_thoughts-image_3.jpg');
+  }
+
+.background-image--4 {
+    background-image: url('../images/deep_thoughts-image_4.jpg');
+  }
 
 .btn {
   display: -webkit-box;
@@ -475,24 +497,47 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 10px;
-  width: 5em;
-  height: 2.5em;
+  width: 3em;
+  height: 1.5em;
   margin: 0;
-  padding: 0;
-  background-color: #aacbff;
-  color: #000533;
+  padding: 0.5em;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, rgb(170, 203, 255)), to(rgb(106, 128, 189))) rgb(170, 203, 255);
+  background: linear-gradient(rgb(170, 203, 255) 5%, rgb(106, 128, 189) 100%) rgb(170, 203, 255);
+  background-color: rgb(170, 203, 255);
+  color: rgb(0, 5, 51);
+  border: 1px solid rgb(0, 0, 0);
   border-style: solid;
   border-color: #000000;
+  border-radius: 1em;
+  -webkit-box-shadow: rgb(30, 48, 102) 1px 0px 10px -1px;
+          box-shadow: rgb(30, 48, 102) 1px 0px 10px -1px;
   font-family: "Lucida Console";
-  font-size: 1.5em;
+  font-size: 1em;
   text-align: center;
+  text-decoration: none;
+  text-shadow: rgb(210, 209, 227) 0px 0px 7px;
+  cursor: pointer;
 }
 
-.btn:hover {
-  color: #3e005e;
-  background-color: #ff6bea;
+@media (min-width: 530px) {
+
+.btn {
+    width: 5em;
+    height: 2.5em;
+    padding: 0;
+    font-size: 1.5em
 }
+  }
+
+.btn:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(5%, rgb(255, 129, 107)), to(rgb(235, 227, 85))) rgb(255, 129, 107);
+    background: linear-gradient(rgb(255, 129, 107) 5%, rgb(235, 227, 85) 100%) rgb(255, 129, 107);
+    background-color: #ff6bea;
+    color: rgb(51, 0, 0);
+    -webkit-box-shadow: rgb(51, 0, 0) 1px 0px 10px -1px;
+            box-shadow: rgb(51, 0, 0) 1px 0px 10px -1px;
+    text-shadow: rgb(210, 209, 227) 0px 0px 7px;
+  }
 
 .button-box {
   display: -webkit-box;
@@ -537,22 +582,32 @@ body {
     display: grid;
     grid-template-columns: [box-col--start] 5% [box-col__content--start] 90% [box-col__content--end] 5% [box-col--end];
     grid-template-rows: [box-row--start] 5% [box-row__title--start] 12.5% [box-row__title--end] 2.5% [box-row__quote--start] 60% [box-row__quote--end] 2.5% [box-row__button--start] 12.5% [box-row__button--end] 5% [box-row--end];
-    grid-column: col-content--start / col-content--end;
-    grid-row: row-content--start / row-content--end;
+    grid-column: col-content__small--start / col-content__small--end;
+    grid-row: row-content__small--start / row-content__small--end;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    justify-items: center;
+    align-self: center;
+    justify-self: center;
     width: 100%;
-    height: 100%;
-    background-color: #d7e5d7;
+    height: 100%; /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(224,231,252,1)), color-stop(10%, rgba(224,231,252,1)), color-stop(50%, rgba(224,231,252,0.75)), color-stop(90%, rgba(224,231,252,1)), to(rgba(224,231,252,1)));
+    background: linear-gradient(to bottom, rgba(224,231,252,1) 0%, rgba(224,231,252,1) 10%, rgba(224,231,252,0.75) 50%, rgba(224,231,252,1) 90%, rgba(224,231,252,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(224,231,252,1)', endColorstr='rgba(224,231,252,1)',GradientType=0 ); /* IE6-9 */
+    border: 0.1em solid rgb(0, 0, 0);
     border-style: solid;
-    border-color: #2e1866;
-    border-width: 2px;
-    border-radius: 50px;
-    /*margin-right: 25%;
-    margin-left: 25%;
-    padding: 10%;*/
+    border-color: rgb(30, 48, 102);
+    border-radius: 3em;
+    -webkit-box-shadow: rgb(0, 5, 51) 1px 0px 10px -1px;
+            box-shadow: rgb(0, 5, 51) 1px 0px 10px -1px;
+  }
+
+@media (min-width: 1280px) {
+
+.random-quote__box {
+      grid-column: col-content__large--start / col-content__large--end;
+      grid-row: row-content__large--start / row-content__large--end
+  }
   }
 
 .random-quote__box-title {
@@ -562,24 +617,47 @@ body {
     height: 100%;
     text-align: center;
     font-family: Trebuchet;
-    font-size: 3em;
+    font-size: 2em;
     font-style: italic;
     font-variant: small-caps;
+  }
+
+@media (min-width: 530px) {
+
+.random-quote__box-title {
+      font-size: 3em
+  }
   }
 
 .random-quote__box-quote {
     grid-column: box-col__content--start / box-col__content--end;
     grid-row: box-row__quote--start / box-row__quote--end;
+    -webkit-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
   }
 
 .random-quote__box-quote--text {
       text-align: left;
       font-family: Garamond;
-      font-size: 1.75em;
+      font-size: 1.15em;
     }
+
+@media (min-width: 530px) {
+
+.random-quote__box-quote--text {
+        font-size: 1.75em
+    }
+  }
 
 .random-quote__box-quote--author {
       text-align: right;
       font-family: Bookman;
-      font-size: 1.25em;
+      font-size: 0.75em;
     }
+
+@media (min-width: 530px) {
+
+.random-quote__box-quote--author {
+        font-size: 1.25em
+    }
+  }

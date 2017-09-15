@@ -4,20 +4,27 @@
     display: grid;
     grid-template-columns: [box-col--start] 5% [box-col__content--start] 90% [box-col__content--end] 5% [box-col--end];
     grid-template-rows: [box-row--start] 5% [box-row__title--start] 12.5% [box-row__title--end] 2.5% [box-row__quote--start] 60% [box-row__quote--end] 2.5% [box-row__button--start] 12.5% [box-row__button--end] 5% [box-row--end];
-    grid-column: col-content--start / col-content--end;
-    grid-row: row-content--start / row-content--end;
+    grid-column: col-content__small--start / col-content__small--end;
+    grid-row: row-content__small--start / row-content__small--end;
     align-items: center;
-    justify-items: center;
+    align-self: center;
+    justify-self: center;
     width: 100%;
     height: 100%;
-    background-color: #d7e5d7;
+    background: -moz-linear-gradient(top, $mainGray 0%, $mainGray 10%, $mainGrayTransparent 50%, $mainGray 90%, $mainGray 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $mainGray 0%, $mainGray 10%, $mainGrayTransparent 50%, $mainGray 90%, $mainGray 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $mainGray 0%, $mainGray 10%, $mainGrayTransparent 50%, $mainGray 90%, $mainGray 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$mainGray', endColorstr='$mainGray',GradientType=0 ); /* IE6-9 */
+    border: 0.1em solid rgb(0, 0, 0);
     border-style: solid;
-    border-color: #2e1866;
-    border-width: 2px;
-    border-radius: 50px;
-    /*margin-right: 25%;
-    margin-left: 25%;
-    padding: 10%;*/
+    border-color: $mainBlue;
+    border-radius: 3em;
+    box-shadow: $mainDarkBlue 1px 0px 10px -1px;
+
+    @mixin atLarge {
+      grid-column: col-content__large--start / col-content__large--end;
+      grid-row: row-content__large--start / row-content__large--end;
+    }
   }
 
   &__box-title {
@@ -27,25 +34,42 @@
     height: 100%;
     text-align: center;
     font-family: Trebuchet;
-    font-size: 3em;
+    font-size: 2em;
     font-style: italic;
     font-variant: small-caps;
+
+    @mixin atSmall {
+      font-size: 3em;
+    }
   }
 
   &__box-quote {
     grid-column: box-col__content--start / box-col__content--end;
     grid-row: box-row__quote--start / box-row__quote--end;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -ms-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
 
     &--text {
       text-align: left;
       font-family: Garamond;
-      font-size: 1.75em;
+      font-size: 1.15em;
+
+      @mixin atSmall {
+        font-size: 1.75em;
+      }
     }
 
     &--author {
       text-align: right;
       font-family: Bookman;
-      font-size: 1.25em;
+      font-size: 0.75em;
+
+      @mixin atSmall {
+        font-size: 1.25em;
+      }
     }
   }
 }
