@@ -81,15 +81,16 @@ function newQuote() {
     document.getElementById('random-quote--text').innerHTML = quotes[randomNumber];
     boxQuote.style.opacity = 1 }, 500);
   for (i = 1; i < 5; i++) {
-    if (document.getElementById("deep-thoughts__page").classList.contains('background-image--' + i)) {
+    if (document.getElementById('deep-thoughts__page').classList.contains('background-image--' + i)) {
       if (i == 4) {
-        document.getElementById("deep-thoughts__page").classList.remove("background-image--4");
-        document.getElementById("deep-thoughts__page").classList.add("background-image--1");
+        document.getElementById('deep-thoughts__page').classList.remove('background-image--4');
+        document.getElementById('deep-thoughts__page').classList.add('background-image--1');
       }
       else {
-        document.getElementById("deep-thoughts__page").classList.remove("background-image--" + i);
-        document.getElementById("deep-thoughts__page").classList.add("background-image--" + (i + 1));
+        document.getElementById('deep-thoughts__page').classList.remove('background-image--' + i);
+        document.getElementById('deep-thoughts__page').classList.add('background-image--' + (i + 1));
       }
+      break;
     }
   }
 }
